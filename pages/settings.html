@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#1686D9">
+
+  <title>Settings | H2O49ja</title>
+
+  <link rel="stylesheet" href="../css/style.css">
+  <script src="../js/settings.js" defer></script>
+</head>
+
+<body>
+  <div class="app-layout">
+
+    <!-- Desktop Sidebar -->
+    <aside class="sidebar">
+      <a href="index.html" class="brand">
+        <span class="brand-icon">H₂O</span>
+        <span>H2O49ja</span>
+      </a>
+
+      <p class="sidebar-label">MENU</p>
+
+      <nav class="sidebar-nav">
+        <a href="index.html" class="nav-link">
+          <span>▦</span>
+          Dashboard
+        </a>
+
+        <a href="history.html" class="nav-link">
+          <span>◷</span>
+          History
+        </a>
+
+        <a href="settings.html" class="nav-link active">
+          <span>⚙</span>
+          Settings
+        </a>
+      </nav>
+
+      <div class="sidebar-footer">
+        <p>Small sips. Better habits.</p>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content settings-main">
+
+      <header class="page-header">
+        <p class="eyebrow">MAKE IT YOURS</p>
+        <h1>Settings</h1>
+        <p class="page-description">
+          Manage your profile and personalize your hydration experience.
+        </p>
+      </header>
+
+      <!-- Profile Settings -->
+      <section class="settings-panel">
+        <div class="settings-panel-heading">
+          <div>
+            <h2>Your profile</h2>
+            <p>Keep your personal details up to date.</p>
+          </div>
+        </div>
+
+        <form id="settings-profile-form">
+
+          <div class="settings-form-grid">
+
+            <div class="form-group">
+              <label for="settings-name">First name</label>
+              <input
+                type="text"
+                id="settings-name"
+                name="name"
+                maxlength="50"
+                autocomplete="given-name"
+                required
+              >
+            </div>
+
+            <div class="form-group">
+              <label for="settings-age">Age</label>
+              <input
+                type="number"
+                id="settings-age"
+                name="age"
+                min="1"
+                max="120"
+                required
+              >
+            </div>
+
+            <div class="form-group">
+              <label for="settings-gender">Gender</label>
+              <select id="settings-gender" name="gender" required>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="prefer-not-to-say">Prefer not to say</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="settings-location">City or town</label>
+              <input
+                type="text"
+                id="settings-location"
+                name="location"
+                maxlength="100"
+                autocomplete="address-level2"
+                required
+              >
+            </div>
+
+          </div>
+
+          <p id="profile-feedback" class="settings-feedback" role="status"></p>
+
+          <button type="submit" class="primary-button settings-save-button">
+            Save profile
+          </button>
+        </form>
+      </section>
+
+      <!-- Hydration Goal -->
+      <section class="settings-panel">
+        <div class="settings-panel-heading">
+          <div>
+            <h2>Daily water goal</h2>
+            <p>Choose the daily target you'd like to track.</p>
+          </div>
+        </div>
+
+        <form id="settings-goal-form">
+          <div class="form-group">
+            <label for="settings-goal">Daily target (ml)</label>
+
+            <input
+              type="number"
+              id="settings-goal"
+              name="dailyGoal"
+              min="250"
+              max="10000"
+              step="50"
+              required
+            >
+
+            <small>
+              This is a personal tracking target, not a medical prescription.
+            </small>
+          </div>
+
+          <p id="goal-feedback" class="settings-feedback" role="status"></p>
+
+          <button type="submit" class="primary-button settings-save-button">
+            Save water goal
+          </button>
+        </form>
+      </section>
+
+      <!-- Reminder Preferences -->
+      <section class="settings-panel">
+        <div class="settings-panel-heading">
+          <div>
+            <h2>Hydration reminders</h2>
+            <p>Choose whether you'd like reminders to drink water.</p>
+          </div>
+        </div>
+
+        <form id="settings-reminder-form">
+
+          <label class="settings-toggle-row" for="reminders-enabled">
+            <span>
+              <strong>Enable reminders</strong>
+              <small>Receive reminders during your day.</small>
+            </span>
+
+            <input
+              type="checkbox"
+              id="reminders-enabled"
+              name="remindersEnabled"
+            >
+          </label>
+
+          <div class="settings-form-grid settings-reminder-times">
+            <div class="form-group">
+              <label for="reminder-start">Start time</label>
+              <input
+                type="time"
+                id="reminder-start"
+                name="reminderStart"
+                value="09:00"
+                required
+              >
+            </div>
+
+            <div class="form-group">
+              <label for="reminder-end">End time</label>
+              <input
+                type="time"
+                id="reminder-end"
+                name="reminderEnd"
+                value="21:00"
+                required
+              >
+            </div>
+          </div>
+
+          <p id="reminder-feedback" class="settings-feedback" role="status"></p>
+
+          <button type="submit" class="primary-button settings-save-button">
+            Save reminder preferences
+          </button>
+        </form>
+
+        <p class="settings-note">
+          Reminder delivery depends on browser support and permissions.
+          Notifications may not run reliably when the app is closed.
+        </p>
+      </section>
+
+      <!-- Data Management -->
+      <section class="settings-panel settings-danger-panel">
+        <div class="settings-panel-heading">
+          <div>
+            <h2>Data management</h2>
+            <p>Understand where your information is stored.</p>
+          </div>
+        </div>
+
+        <p class="settings-note">
+          Your profile, preferences, and water records are stored in this
+          browser. Clearing browser data may erase them.
+        </p>
+
+        <button
+          type="button"
+          id="export-data-button"
+          class="secondary-button"
+        >
+          Export my data
+        </button>
+      </section>
+
+      <p class="settings-footer">
+        H2O49ja · Small sips. Better habits.
+      </p>
+
+    </main>
+
+    <!-- Mobile Bottom Navigation -->
+    <nav class="mobile-bottom-nav" aria-label="Main navigation">
+      <a href="index.html" class="mobile-nav-link">
+        <span>▦</span>
+        <span>Home</span>
+      </a>
+
+      <a href="history.html" class="mobile-nav-link">
+        <span>◷</span>
+        <span>History</span>
+      </a>
+
+      <a href="settings.html" class="mobile-nav-link active">
+        <span>⚙</span>
+        <span>Settings</span>
+      </a>
+    </nav>
+
+  </div>
+</body>
+</html>

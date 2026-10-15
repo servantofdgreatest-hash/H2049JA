@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta
+    name="theme-color"
+    content="#1686D9"
+  >
+
+  <title>Get Started | H2O49ja</title>
+
+  <link rel="stylesheet" href="../css/style.css">
+  <script src="../js/onboarding.js" defer></script>
+</head>
+
+<body class="onboarding-page">
+  <main class="onboarding-container">
+
+    <a href="index.html" class="brand">
+      <span class="brand-icon">H₂O</span>
+      <span>H2O49ja</span>
+    </a>
+
+    <section class="onboarding-card">
+      <div class="onboarding-icon">💧</div>
+
+      <p class="eyebrow">YOUR DAILY HYDRATION COMPANION</p>
+
+      <h1>Let's make hydration a habit.</h1>
+
+      <p class="onboarding-description">
+        Tell us a little about yourself so we can estimate
+        a daily water goal that suits your needs.
+      </p>
+
+      <form id="onboarding-form">
+
+        <div class="form-group">
+          <label for="full-name">What should we call you?</label>
+          <input
+            type="text"
+            id="full-name"
+            name="name"
+            placeholder="Enter your first name"
+            autocomplete="given-name"
+            required
+            maxlength="50"
+          >
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="age">Your age</label>
+            <input
+              type="number"
+              id="age"
+              name="age"
+              placeholder="e.g. 22"
+              min="1"
+              max="120"
+              required
+            >
+          </div>
+
+          <div class="form-group">
+            <label for="gender">Gender</label>
+            <select id="gender" name="gender" required>
+              <option value="">Select</option>
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+              <option value="prefer-not-to-say">Prefer not to say</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="location">Your city or town</label>
+          <input
+            type="text"
+            id="location"
+            name="location"
+            placeholder="e.g. Ilorin"
+            autocomplete="address-level2"
+            required
+            maxlength="100"
+          >
+          <small>
+            Used to find local weather conditions.
+          </small>
+        </div>
+
+        <div class="privacy-note">
+          <span>🔒</span>
+          <p>
+            Your profile stays in this browser on this device.
+            No account or password is needed.
+          </p>
+        </div>
+
+        <button type="submit" class="primary-button">
+          Create my profile
+          <span aria-hidden="true">→</span>
+        </button>
+
+        <p id="onboarding-feedback" role="alert"></p>
+      </form>
+    </section>
+
+    <p class="onboarding-footer">
+      Small sips. Better habits. One day at a time.
+    </p>
+
+  </main>
+</body>
+</html>
